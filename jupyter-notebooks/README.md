@@ -1,10 +1,11 @@
 # Planet Jupyter Notebooks Examples
 
-This repository contains a collection Jupyter notebooks that teach you how to use Planet Insights Platform. They are divided into three folders:
+This repository contains a collection Jupyter notebooks that teach you how to use Planet Insights Platform. They are divided into four folders:
 
 1. `api_guides` - Here, you will find notebooks that introduce you to the essential functionality of different APIs with quickstarts to guides focused on specific functionality.
 2. `use_cases` - In the use cases section, we've built notebooks around common applications of satellite data to demonstrate how to answer questions or create insights from Earth observation data.
 3. `workflows` - Here we cover foundational workflows of how to use Planet Insights Platform as well as common patterns of analyzing, processing, or integrating data with other software. Workflows are typically building blocks that you might use to accomplish different tasks you are working on.
+4. `impact` - Notebooks from Planet's impact and conservation programmes, showing how partner organisations apply Earth observation to biodiversity, climate and humanitarian work. Each folder covers one programme end to end.
 
 ## Planet Sandbox Data
 
@@ -81,3 +82,9 @@ Several Notebooks in this directory provide examples on how to use Planet APIs w
 | [Publish To ArcGIS Online](workflows/publish_to_arcgis_online) | Publish PlanetScope imagery as image services in ArcGIS Image for ArcGIS Online. |
 | [Planet SuperRes](workflows/superres_scenes) ![Sandbox Data](https://img.shields.io/badge/Planet%20Sandbox%20Data-009db1)| Learn to apply the SuperRes model to PlanetScope scenes through the Processing and Batch Processing APIs. |
 | [Working With Usable Data Mask](workflows/working_with_usable_data_mask) | Use UDM to identify and mask pixels with quality issues in satellite imagery. |
+
+### Impact
+
+| Folder | Description |
+| ------ | ----------- |
+| [Project Centinela](impact/project_centinela) | Biodiversity monitoring across conservation partner sites: defining AOIs, recurring imagery subscriptions, habitat indicators, and change reporting. |
