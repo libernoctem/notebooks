@@ -87,4 +87,4 @@ Several Notebooks in this directory provide examples on how to use Planet APIs w
 
 | Folder | Description |
 | ------ | ----------- |
-| [Project Centinela](impact/project_centinela) | Biodiversity monitoring across conservation partner sites: defining AOIs, recurring imagery subscriptions, habitat indicators, and change reporting. |
+| [Project Centinela](impact/project_centinela) | Land cover classification with Random Forest and burn area mapping for conservation partner sites, using PlanetScope surface reflectance basemaps. |

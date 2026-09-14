@@ -45,9 +45,26 @@ throughout this folder, see [`api_guides`](../../api_guides) — in particular t
 
 ## Notebooks
 
-_No notebooks have been added yet. As they land, list them here in the order
-they are meant to be run, with a one-line description of what each covers._
+### Land cover classification (BioMA)
+
+A three-part workflow that turns PlanetScope surface reflectance basemaps into a
+land use / land cover map for a site. Run them in order — each notebook consumes
+what the previous one produced.
 
 | Notebook | Description |
 | -------- | ----------- |
-| _TBD_ | _TBD_ |
+| [1. Basemaps download](1_bioma_basemaps_download.ipynb) | Explore and download Planet surface reflectance basemaps for an area of interest using the Orders API. |
+| [2. Train classifier](2_bioma_train_classifier.ipynb) | Build a training dataset from labelled polygons, sample representative pixels, and train a Random Forest land cover classifier. |
+| [3. Basemaps inference](3_bioma_basemaps_inference.ipynb) | Apply the trained model across a full basemap AOI to produce a classified land cover map. |
+
+Notebook 2 writes out `rf_model.pkl` and `rf_model_metadata.json`, which
+notebook 3 expects as inputs.
+
+### Burn area mapping
+
+| Notebook | Description |
+| -------- | ----------- |
+| [Burn area index](project_centinela_burn_area_index.ipynb) | Order basemap quads for an area of interest with a Burn Area Index band computed server-side by the Orders API band math tool, then download and visualise the result over true colour. |
+
+This notebook reads its area of interest from a GeoJSON file. Set the `aoi`
+variable in the ordering cell to point at your own geometry before running it.
