@@ -47,9 +47,9 @@ Run the notebooks in order — each one consumes what the previous produced.
 
 | Notebook | Description |
 | -------- | ----------- |
-| [1. Planet Basemap Downloader](1_bioma_basemaps_download.ipynb) | Explore and download Planet surface reflectance basemaps for an area of interest using the Orders API. |
-| [2. Land Cover Classification with Random Forest](2_bioma_train_classifier.ipynb) | Build a training dataset from labelled polygons, sample representative pixels, and train a Random Forest classifier. |
-| [3. Inference Workflow](3_bioma_basemaps_inference.ipynb) | Apply the trained model across the full basemap AOI to produce a classified land cover map. |
+| [1. Planet Basemap Downloader](1_planet_basemap_downloader.ipynb) | Explore and download Planet surface reflectance basemaps for an area of interest using the Orders API. |
+| [2. Land Cover Classification with Random Forest](2_land_cover_classification_random_forest.ipynb) | Build a training dataset from labelled polygons, sample representative pixels, and train a Random Forest classifier. |
+| [3. Inference Workflow](3_land_cover_classification_inference.ipynb) | Apply the trained model across the full basemap AOI to produce a classified land cover map. |
 
 Notebook 2 writes out `rf_model.pkl` and `rf_model_metadata.json`, which notebook
 3 expects as inputs.
@@ -66,7 +66,7 @@ Registration is required but the course is free.
 
 | Notebook | Description |
 | -------- | ----------- |
-| [Burn area index](project_centinela_burn_area_index.ipynb) | Order basemap quads for an area of interest with a Burn Area Index band computed server-side by the Orders API band math tool, then download and visualise the result over true colour. |
+| [Burn area index](burn_area_index.ipynb) | Order basemap quads for an area of interest with a Burn Area Index band computed server-side by the Orders API band math tool, then download and visualise the result over true colour. |
 
 This notebook reads its area of interest from a GeoJSON file. Set the `aoi`
 variable in the ordering cell to point at your own geometry before running it.
