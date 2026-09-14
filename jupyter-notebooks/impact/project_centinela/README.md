@@ -6,59 +6,61 @@ ecosystems. Partner organisations each steward one or more field sites, and
 Planet data is used to observe those sites consistently over time — tracking
 habitat condition and change at a cadence that field survey alone cannot reach.
 
-This folder collects the notebooks behind that work: reproducible examples of
-how satellite imagery and Planetary Variables are turned into the indicators
-conservation teams actually use.
+This folder collects the notebooks behind that work: reproducible workflows that
+turn Planet basemaps into the land cover and change information conservation
+teams use in the field.
 
 ## What you can expect here
 
-The notebooks in this folder are written to be run against your own area of
-interest, not just ours. Each one is standalone, though some build on data
-prepared in an earlier notebook.
+The notebooks are written to be run against your own area of interest, not just
+ours. Two workflows are covered so far:
 
-Broadly, they cover:
+* **Land cover mapping** — a three-stage tool that trains a classifier on your
+  own knowledge of a site, then applies it across the whole area.
+* **Burn area mapping** — computing a Burn Area Index over a site to locate and
+  assess fire damage.
 
-* **Defining and managing sites** — turning a protected-area boundary or
-  concession polygon into an AOI you can reuse across Planet APIs.
-* **Setting up recurring monitoring** — using the Subscriptions API to deliver
-  imagery and Planetary Variables for a site on an ongoing basis, rather than
-  ordering scene by scene.
-* **Deriving biodiversity-relevant indicators** — vegetation condition, canopy
-  and land cover change, water extent, and other measures that act as proxies
-  for habitat health.
-* **Detecting and reviewing change** — comparing a site against its own history
-  to surface where something has changed and how much.
-* **Reporting results** — summarising site-level change into the tables, charts
-  and exports that go back to partners and funders.
+Further programme notebooks will be added here over time.
 
 ## Getting started
 
-These notebooks need a Planet account with access to the relevant imagery and
-Planetary Variables. If you don't have one, you can
+These notebooks need a Planet account with access to PlanetScope surface
+reflectance basemaps. If you don't have one, you can
 [create a 30-day trial](https://insights.planet.com/sign-up/).
 
 Setup instructions, including how to provide your API key, are in the
-[repository README](../../../README.md). For an introduction to the APIs used
-throughout this folder, see [`api_guides`](../../api_guides) — in particular the
-[Subscriptions API](../../api_guides/subscriptions_api) and
-[Features API](../../api_guides/features_api) guides.
+[repository README](../../../README.md). Both workflows are built on Planet
+basemaps and the Orders API — see the
+[Orders API](../../api_guides/orders_api) and
+[Basemaps API](../../api_guides/basemaps_api) guides for an introduction.
 
 ## Notebooks
 
-### Land cover classification (BioMA)
+### Land cover mapping
 
-A three-part workflow that turns PlanetScope surface reflectance basemaps into a
-land use / land cover map for a site. Run them in order — each notebook consumes
-what the previous one produced.
+A three-stage workflow that turns 4.7 m PlanetScope surface reflectance basemaps
+into a land cover map for a site. You order the imagery, train a classifier using
+your own local knowledge of the ground, and then run that model across the whole
+site.
+
+Run the notebooks in order — each one consumes what the previous produced.
 
 | Notebook | Description |
 | -------- | ----------- |
-| [1. Basemaps download](1_bioma_basemaps_download.ipynb) | Explore and download Planet surface reflectance basemaps for an area of interest using the Orders API. |
-| [2. Train classifier](2_bioma_train_classifier.ipynb) | Build a training dataset from labelled polygons, sample representative pixels, and train a Random Forest land cover classifier. |
-| [3. Basemaps inference](3_bioma_basemaps_inference.ipynb) | Apply the trained model across a full basemap AOI to produce a classified land cover map. |
+| [1. Planet Basemap Downloader](1_bioma_basemaps_download.ipynb) | Explore and download Planet surface reflectance basemaps for an area of interest using the Orders API. |
+| [2. Land Cover Classification with Random Forest](2_bioma_train_classifier.ipynb) | Build a training dataset from labelled polygons, sample representative pixels, and train a Random Forest classifier. |
+| [3. Inference Workflow](3_bioma_basemaps_inference.ipynb) | Apply the trained model across the full basemap AOI to produce a classified land cover map. |
 
-Notebook 2 writes out `rf_model.pkl` and `rf_model_metadata.json`, which
-notebook 3 expects as inputs.
+Notebook 2 writes out `rf_model.pkl` and `rf_model_metadata.json`, which notebook
+3 expects as inputs.
+
+The notebooks use BioMA as their worked example — the area the tool was developed
+and tested against. Point them at your own area of interest to run the workflow
+over your site.
+
+Planet runs a free workshop that walks through this tool end to end:
+[Project Centinela — Land Cover Mapping Workshop](https://university.planet.com/project-centinela-land-cover-mapping-workshop).
+Registration is required but the course is free.
 
 ### Burn area mapping
 
