@@ -68,5 +68,7 @@ Registration is required but the course is free.
 | -------- | ----------- |
 | [Burn area index](burn_area_index.ipynb) | Order basemap quads for an area of interest with a Burn Area Index band computed server-side by the Orders API band math tool, then download and visualise the result over true colour. |
 
-This notebook reads its area of interest from a GeoJSON file. Set the `aoi`
-variable in the ordering cell to point at your own geometry before running it.
+A sample area of interest, [`fire_demo_aoi.geojson`](fire_demo_aoi.geojson), is
+included so the notebook runs as-is — a roughly 13 x 17 km box in northern
+Mexico. Point the `aoi` variable at your own GeoJSON file to run the workflow
+over a different site.
