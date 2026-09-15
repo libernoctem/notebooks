@@ -13,14 +13,14 @@ teams use in the field.
 ## What you can expect here
 
 The notebooks are written to be run against your own area of interest, not just
-ours. Two workflows are covered so far:
+ours. They cover the **Land Cover Mapping tool**: a three-stage workflow that
+trains a classifier on your own knowledge of a site, then applies it across the
+whole area.
 
-* **Land cover mapping** — a three-stage tool that trains a classifier on your
-  own knowledge of a site, then applies it across the whole area.
-* **Burn area mapping** — computing a Burn Area Index over a site to locate and
-  assess fire damage.
-
-Further programme notebooks will be added here over time.
+Other Project Centinela work lives elsewhere in this repository. Burn area
+mapping for Centinela sites is in
+[`burned_area_delineation`](../burned_area_delineation), alongside a second
+approach to the same problem.
 
 ## Getting started
 
@@ -36,8 +36,6 @@ basemaps and the Orders API — see the
 
 ## Notebooks
 
-### Land cover mapping
-
 A three-stage workflow that turns 4.7 m PlanetScope surface reflectance basemaps
 into a land cover map for a site. You order the imagery, train a classifier using
 your own local knowledge of the ground, and then run that model across the whole
@@ -51,8 +49,8 @@ Run the notebooks in order — each one consumes what the previous produced.
 | [2. Land Cover Classification with Random Forest](2_land_cover_classification_random_forest.ipynb) | Build a training dataset from labelled polygons, sample representative pixels, and train a Random Forest classifier. |
 | [3. Inference Workflow](3_land_cover_classification_inference.ipynb) | Apply the trained model across the full basemap AOI to produce a classified land cover map. |
 
-Notebook 2 writes out `rf_model.pkl` and `rf_model_metadata.json`, which notebook
-3 expects as inputs.
+Notebook 2 writes out `rf_model.joblib` and `rf_model_metadata.json`, which
+notebook 3 expects as inputs.
 
 The notebooks use BioMA as their worked example — the area the tool was developed
 and tested against. Point them at your own area of interest to run the workflow
@@ -61,14 +59,3 @@ over your site.
 Planet runs a free workshop that walks through this tool end to end:
 [Project Centinela — Land Cover Mapping Workshop](https://university.planet.com/project-centinela-land-cover-mapping-workshop).
 Registration is required but the course is free.
-
-### Burn area mapping
-
-| Notebook | Description |
-| -------- | ----------- |
-| [Burn area index](burn_area_index.ipynb) | Order basemap quads for an area of interest with a Burn Area Index band computed server-side by the Orders API band math tool, then download and visualise the result over true colour. |
-
-A sample area of interest, [`fire_demo_aoi.geojson`](fire_demo_aoi.geojson), is
-included so the notebook runs as-is — a roughly 13 x 17 km box in northern
-Mexico. Point the `aoi` variable at your own GeoJSON file to run the workflow
-over a different site.

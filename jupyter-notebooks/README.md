@@ -1,11 +1,10 @@
 # Planet Jupyter Notebooks Examples
 
-This repository contains a collection Jupyter notebooks that teach you how to use Planet Insights Platform. They are divided into four folders:
+This repository contains a collection Jupyter notebooks that teach you how to use Planet Insights Platform. They are divided into three folders:
 
 1. `api_guides` - Here, you will find notebooks that introduce you to the essential functionality of different APIs with quickstarts to guides focused on specific functionality.
 2. `use_cases` - In the use cases section, we've built notebooks around common applications of satellite data to demonstrate how to answer questions or create insights from Earth observation data.
 3. `workflows` - Here we cover foundational workflows of how to use Planet Insights Platform as well as common patterns of analyzing, processing, or integrating data with other software. Workflows are typically building blocks that you might use to accomplish different tasks you are working on.
-4. `impact` - Notebooks from Planet's impact and conservation programmes, showing how partner organisations apply Earth observation to biodiversity, climate and humanitarian work. Each folder covers one programme end to end.
 
 ## Planet Sandbox Data
 
@@ -45,7 +44,7 @@ Several Notebooks in this directory provide examples on how to use Planet APIs w
 | ------ | ----------- |
 | [Agriculture Index Time Series](use_cases/agriculture_index_time_series) ![Sandbox Data](https://img.shields.io/badge/Planet%20Sandbox%20Data-009db1)  | Generate, process, and analyze agricultural index time series data. |
 | [Bare Soil Detector](use_cases/bare_soil_detector) | Uses satellite data to identify bare soil periods in agricultural fields. |
-| [Burned Area Delineation](use_cases/burned_area_delineation) | Uses PlanetScope Mosaics to map the extent of the Park Fire (2024) burn scar via NDVI and BAI differences. |
+| [Burned Area Delineation](use_cases/burned_area_delineation) | Map burn scar extent from PlanetScope data. Two approaches: NDVI and BAI differencing between two dates, and a single-date Burn Area Index computed server-side by the Orders API. |
 | [Calculate Water Extent Analysis Ready Planetscope](use_cases/calculate_water_extent_analysis_ready_planetscope) ![Sandbox Data](https://img.shields.io/badge/Planet%20Sandbox%20Data-009db1) | Use Analysis-Ready PlanetScope (ARPS) to observe changing water levels in a reservoir. |
 | [Coastal Erosion Example](use_cases/coastal_erosion_example) | Use Rasterio to read satellite data. |
 | [Crop Classification](use_cases/crop_classification) | Classify crop type with PlanetScope 4-band Orthotiles using CART. |
@@ -55,6 +54,7 @@ Several Notebooks in this directory provide examples on how to use Planet APIs w
 | [Forest Monitoring](use_cases/forest_monitoring) | Demonstrates an end-to-end use case to detect deforestation due to road development. |
 | [Growing Degree Days](use_cases/growing_degree_days) ![Sandbox Data](https://img.shields.io/badge/Planet%20Sandbox%20Data-009db1) | Calculates Growing Degree Days (GDD) from Land Surface Temperature using Planet's Statistical API and Sandbox Data. |
 | [Land Surface Temperature](use_cases/land_surface_temperature) ![Sandbox Data](https://img.shields.io/badge/Planet%20Sandbox%20Data-009db1) | Analyze heat waves and urban heat island intensity using Land Surface Temperature data. |
+| [Project Centinela](use_cases/project_centinela) | Land Cover Mapping tool for conservation sites: download PlanetScope basemaps, train a Random Forest classifier on local ground knowledge, and run it site-wide. |
 | [Ship Detector](use_cases/ship_detector) | Use scikit-image to detect and count ships in satellite imagery. |
 | [Yield Forecasting](use_cases/yield_forecasting) ![Sandbox Data](https://img.shields.io/badge/Planet%20Sandbox%20Data-009db1) | Use Planetary Variables to forecast hay yield in North Dakota. |
 
@@ -82,9 +82,3 @@ Several Notebooks in this directory provide examples on how to use Planet APIs w
 | [Publish To ArcGIS Online](workflows/publish_to_arcgis_online) | Publish PlanetScope imagery as image services in ArcGIS Image for ArcGIS Online. |
 | [Planet SuperRes](workflows/superres_scenes) ![Sandbox Data](https://img.shields.io/badge/Planet%20Sandbox%20Data-009db1)| Learn to apply the SuperRes model to PlanetScope scenes through the Processing and Batch Processing APIs. |
 | [Working With Usable Data Mask](workflows/working_with_usable_data_mask) | Use UDM to identify and mask pixels with quality issues in satellite imagery. |
-
-### Impact
-
-| Folder | Description |
-| ------ | ----------- |
-| [Project Centinela](impact/project_centinela) | Land cover classification with Random Forest and burn area mapping for conservation partner sites, using PlanetScope surface reflectance basemaps. |
